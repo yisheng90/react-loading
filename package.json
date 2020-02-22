@@ -1,0 +1,35 @@
+{
+  "name": "react-skeleton",
+  "version": "1.0.0",
+  "description": "A React Skeleton Component",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "storybook": "start-storybook",
+    "test": "jest --config jestconfig.json --passWithNoTests"
+  },
+  "author": "Yi Sheng Lee (yisheng@yishenglee.com)",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "@storybook/react": "^5.3.13",
+    "@testing-library/jest-dom": "^5.1.1",
+    "@testing-library/react": "^9.4.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "jest": "24.0.0",
+    "path": "^0.12.7",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "styled-components": "^5.0.1",
+    "ts-jest": "^25.2.1",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}
