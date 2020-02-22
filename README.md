@@ -1,6 +1,7 @@
 # React Loading
 
 [![Build Status](https://travis-ci.org/yisheng90/react-loading.png?branch=master)](https://travis-ci.org/yisheng90/react-loading)
+[![codecov](https://codecov.io/gh/yisheng90/react-loading/branch/master/graph/badge.svg)](https://codecov.io/gh/yisheng90/react-loading)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 A loading skeleton component built on React
