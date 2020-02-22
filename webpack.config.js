@@ -5,7 +5,7 @@ module.exports = {
   entry: "./src/Skeleton.jsx",
   output: {
     path: path.resolve("lib"),
-    filename: "index.js",
+    filename: "Skeleton.js",
     libraryTarget: "commonjs2"
   },
   module: {
