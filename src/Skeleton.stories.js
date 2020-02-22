@@ -7,10 +7,22 @@ export default { title: "Skeleton" };
 
 export const basic = () => <Skeleton />;
 
-export const circle = () => <Skeleton circle height={50} width={50} />;
+export const circle = () => <Skeleton circle width={250} />;
 
-export const height = () => <Skeleton height={30} />;
+export const height = () => (
+  <>
+    <Skeleton height={25} />
+    <Skeleton height="25px" />
+    <Skeleton height="3rem" />
+  </>
+);
 
-export const width = () => <Skeleton width={300} rows={6} />;
+export const width = () => (
+  <>
+    <Skeleton width={250} />
+    <Skeleton width="250px" />
+    <Skeleton width="5rem" />
+  </>
+);
 
-export const multiRow = () => <Skeleton rows={5} />;
+export const multiRow = () => <Skeleton width={250} rows={6} />;

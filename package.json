@@ -1,5 +1,5 @@
 {
-  "name": "react-skeleton",
+  "name": "@yisheng90/react-loading",
   "version": "1.0.0",
   "description": "A React Skeleton Component",
   "main": "index.js",
@@ -12,7 +12,8 @@
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react-dom": "^16.0.0",
+    "prop-types": "^15.7.2"
   },
   "devDependencies": {
     "@storybook/react": "^5.3.13",
@@ -25,11 +26,28 @@
     "babel-preset-stage-0": "^6.24.1",
     "jest": "24.0.0",
     "path": "^0.12.7",
+    "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "styled-components": "^5.0.1",
     "ts-jest": "^25.2.1",
     "webpack": "^4.41.6",
     "webpack-cli": "^3.3.11"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yisheng90/react-loading.git"
+  },
+  "keywords": [
+    "React",
+    "Loading",
+    "Skeleton"
+  ],
+  "bugs": {
+    "url": "https://github.com/yisheng90/react-loading/issues"
+  },
+  "homepage": "https://github.com/yisheng90/react-loading#readme"
 }

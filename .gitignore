@@ -8,6 +8,7 @@
 logs
 **/*.backup.*
 **/*.back.*
+lib
 
 coverage
 node_modules
