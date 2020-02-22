@@ -1,8 +1,8 @@
 {
   "name": "@yisheng90/react-loading",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React Skeleton Component",
-  "main": "index.js",
+  "main": "./lib/Skeleton.js",
   "scripts": {
     "build": "webpack",
     "storybook": "start-storybook",
@@ -11,9 +11,9 @@
   "author": "Yi Sheng Lee (yisheng@yishenglee.com)",
   "license": "MIT",
   "peerDependencies": {
+    "prop-types": "^15.7.2",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "prop-types": "^15.7.2"
+    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "@storybook/react": "^5.3.13",
