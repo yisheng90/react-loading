@@ -51,7 +51,7 @@ export const skeletonKeyframe = keyframes`
 export const Line = styled.span`
   &&& {
     display: block;
-    margin: 4px 0;
+    margin: 0 0 4px 0;
     background-color: ${colors.base};
     background-image: linear-gradient(
       90deg,

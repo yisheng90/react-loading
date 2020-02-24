@@ -10,7 +10,7 @@ const TEST_ID = "skeleton__item";
 const testForBaseStyle = element => {
   expect(element).toHaveStyle(`
     display: block;
-    margin: 4px 0;
+    margin: 0 0 4px 0;
     background-color: ${colors.base};
     background-image: linear-gradient(
       90deg,
