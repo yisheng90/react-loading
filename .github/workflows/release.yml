@@ -1,0 +1,35 @@
+on: 
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+name: Release Package
+jobs:
+  release:
+    name: Release Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      
+      - name: Check if version has been updated
+        id: check
+        uses: tEndBug/version-check@v1
+
+      - name: Create Release if version changed
+        if: steps.check.outputs.changed == 'true'
+        id: create_release
+        uses: actions/create-release@latest
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with: 
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+          
