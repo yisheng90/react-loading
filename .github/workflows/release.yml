@@ -10,14 +10,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: master
       
       - name: Check if version has been updated
         id: check
         uses: tEndBug/version-check@v1
-        with:
-          diff-search: true
-          file-name: package.json
-          token: ${{ secrets.GH_TOKEN }}
 
       - name: Create Release if version changed
         if: steps.check.outputs.changed == 'true'
