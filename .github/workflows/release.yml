@@ -5,13 +5,13 @@ on:
 name: Release Package
 jobs:
   release:
-  name: Release Package
-  run-on: ubuntu-latest
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    
-    - name: Check package version
-      uses: technote-space/package-version-check-action@v1
-      with:
-        COMMIT_DISABLED: 1
+    name: Release Package
+    run-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      - name: Check package version
+        uses: technote-space/package-version-check-action@v1
+        with:
+          COMMIT_DISABLED: 1
