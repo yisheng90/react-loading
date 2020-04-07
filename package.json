@@ -1,6 +1,6 @@
 {
   "name": "@yisheng90/react-loading",
-  "version": "1.0.4",
+  "version": "1.2.0",
   "description": "A React Skeleton Component",
   "main": "./lib/Skeleton.js",
   "scripts": {
@@ -31,7 +31,7 @@
     "react-dom": "^16.12.0",
     "styled-components": "^5.0.1",
     "ts-jest": "^25.2.1",
-    "webpack": "^4.41.6",
+    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
   "directories": {
