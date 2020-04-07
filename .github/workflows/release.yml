@@ -11,7 +11,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       
-      - name: Check package version
-        uses: technote-space/package-version-check-action@v1
+      - name: Check if version has been updated
+        id: check
+        uses: tEndBug/version-check@v1
         with:
-          COMMIT_DISABLED: 1
+          diff-search: true
+          file-name: package.json
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Create Release if version changed
+        if: steps.check.outputs.changed == 'true'
+        id: create_release
+        uses: actions/create-release@latest
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+        with: 
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+          
