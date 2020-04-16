@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack",
     "storybook": "start-storybook",
-    "test": "jest --config jestconfig.json --passWithNoTests"
+    "test": "jest --config jestconfig.json --passWithNoTests",
+    "commit": "npx git-cz"
   },
   "author": "Yi Sheng Lee (yisheng@yishenglee.com)",
   "license": "MIT",

@@ -15,6 +15,7 @@ const Skeleton = ({ rows, ...props }) => {
 Skeleton.propTypes = {
   rows: PropTypes.number,
   circle: PropTypes.bool,
+  color: PropTypes.string,
   height: PropTypes.oneOfType[(PropTypes.string, PropTypes.number)],
   width: PropTypes.oneOfType[(PropTypes.string, PropTypes.number)]
 };
