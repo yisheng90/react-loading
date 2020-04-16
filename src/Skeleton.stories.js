@@ -63,3 +63,16 @@ export const translucent = () => (
   </>
 );
 
+export const display = () => (
+  <>
+    <div style={{display: 'flex', padding: '20px'}}>
+      <Skeleton  width={45} circle color="pink"/>
+      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', width: '100%', marginLeft: "20px"}}>
+        <Skeleton color="pink"/>
+        <Skeleton width="50%" color="pink"/>
+      </div>
+    </div>
+  </>
+);
+
+
