@@ -1,9 +1,27 @@
 import styled, { keyframes, css } from "styled-components";
+import { isValidStyleColor } from './helpers';
 
 export const colors = {
   base: "#eee",
-  highlight: "#f5f5f5"
+  highlight: "#f5f5f5",
+  highlightTranslucent: "#f5f5f54D",
 };
+
+const getColorStyle = ({color, translucent}) => {
+  const baseColor = isValidStyleColor(color) ?  color : colors.base;
+  const hightlightColor = baseColor === colors.base ? colors.highlight : colors.highlightTranslucent;
+
+  return css`
+    opacity: ${translucent ? "0.3" : "1"};
+    background-color: ${baseColor};
+    background-image: linear-gradient(
+      90deg,
+      rgba(255,0,0,0),
+      ${hightlightColor},
+      rgba(255,0,0,0)
+    );
+  `;
+}
 
 const getCircularStyle = ({ circle }) =>
   circle &&
@@ -48,17 +66,11 @@ export const skeletonKeyframe = keyframes`
     }
 `;
 
+
 export const Line = styled.span`
   &&& {
     display: block;
     margin: 0 0 4px 0;
-    background-color: ${colors.base};
-    background-image: linear-gradient(
-      90deg,
-      ${colors.base},
-      ${colors.highlight},
-      ${colors.base}
-    );
     background-size: 220px 100%;
     background-repeat: no-repeat;
     border-radius: 4px;
@@ -68,5 +80,17 @@ export const Line = styled.span`
     ${getCircularStyle}
     ${getSkeletonHeight}
     ${getSkeletonWidth}
+    ${getColorStyle}
+  }
+`;
+
+export const Container = styled.div`
+  &&& {
+    display: flex;
+    align-items: center;
+    
+     > span {
+       margin-right: 10px;
+     }
   }
 `;
