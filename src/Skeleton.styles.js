@@ -7,12 +7,12 @@ export const colors = {
   highlightTranslucent: "#f5f5f54D",
 };
 
-const getColorStyle = ({color}) => {
+const getColorStyle = ({color, translucent}) => {
   const baseColor = isValidStyleColor(color) ?  color : colors.base;
   const hightlightColor = baseColor === colors.base ? colors.highlight : colors.highlightTranslucent;
 
   return css`
-    opacity: 1;
+    opacity: ${translucent ? "0.3" : "1"};
     background-color: ${baseColor};
     background-image: linear-gradient(
       90deg,

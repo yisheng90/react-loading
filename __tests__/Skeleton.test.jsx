@@ -194,4 +194,16 @@ describe("Skeleton", () => {
       testForBaseStyle(element);
     });
   });
+
+  describe("Translucent", () => {
+    it(`should render Skeleton with opacity 0.3`, () => {
+      const { getByTestId } = render(<Skeleton translucent />);
+      const element = getByTestId(TEST_ID);
+
+      expect(element).toBeTruthy();
+      expect(element).toHaveStyle(`
+          opacity: 0.3;
+      `);
+    });
+  });
 });

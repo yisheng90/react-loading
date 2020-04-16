@@ -55,3 +55,11 @@ export const color = () => (
   </>
 );
 
+export const translucent = () => (
+  <>
+    <div style={{display: 'flex', justifyContent: 'center', background: '#E84A5F', padding: '20px'}}>
+      <Skeleton color="black" width={250} height={30} translucent/>
+    </div>
+  </>
+);
+
