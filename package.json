@@ -4,7 +4,7 @@
   "description": "A React Skeleton Component",
   "main": "./lib/Skeleton.js",
   "scripts": {
-    "build": "webpack",
+    "build": "webpack && cp src/Skeleton.d.ts lib",
     "storybook": "start-storybook",
     "test": "jest --config jestconfig.json --passWithNoTests",
     "commit": "npx git-cz"
@@ -35,6 +35,7 @@
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11"
   },
+  "types": "Skeleton.d.ts",
   "directories": {
     "lib": "lib"
   },
