@@ -1,0 +1,23 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import Skeleton from '../Skeleton';
+
+<Meta title="Examples | Rows"  />
+
+# `Rows`
+
+*number - optional*
+
+Defaults to 1. It is used to determine the number of rows to be displayed. 
+
+<Preview>
+    <Story name="Basic">
+        <Skeleton/>
+    </Story>
+</Preview>
+
+<Preview>
+    <Story name="Multi Rows">
+        <Skeleton rows={6}/>
+    </Story>
+</Preview>

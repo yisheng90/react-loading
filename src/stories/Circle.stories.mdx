@@ -1,0 +1,29 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import Skeleton from '../Skeleton';
+
+<Meta title="Examples | Circle"  />
+
+# `Circle`
+
+*boolean - optional*
+
+Defaults to false. It is used to set shape of the skleton. 
+
+## In the Container
+
+<Preview>
+    <Story name="Container">
+        <div style={{width: '50px', height: '50px'}}>
+            <Skeleton circle />
+        </div>
+    </Story>
+</Preview>
+
+## Width
+
+<Preview>
+    <Story name="Width">
+         <Skeleton width="50px" circle/>
+    </Story>
+</Preview>

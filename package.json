@@ -7,7 +7,9 @@
     "build": "webpack && cp src/Skeleton.d.ts lib",
     "storybook": "start-storybook",
     "test": "jest --config jestconfig.json --passWithNoTests",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "build-storybook": "build-storybook -c .storybook -o .out",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "author": "Yi Sheng Lee (yisheng@yishenglee.com)",
   "license": "MIT",
@@ -17,7 +19,9 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-docs": "^5.3.18",
     "@storybook/react": "^5.3.13",
+    "@storybook/storybook-deployer": "^2.8.5",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.4.0",
     "babel-core": "^6.26.3",

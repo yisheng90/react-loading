@@ -1,0 +1,43 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import Skeleton from '../Skeleton';
+
+<Meta title="Examples | Color"  />
+
+# `Color`
+
+*string - optional*
+
+It is used to set the color of the skleton. You can set it using `hex`, `rgb` or `rgba`.
+
+## Color Name
+
+<Preview>
+    <Story name="Color Name">
+        <Skeleton color="pink" />
+    </Story>
+</Preview>
+
+## Hex Code
+
+<Preview>
+    <Story name="Hex Code">
+        <Skeleton color="#F8B195"/>
+    </Story>
+</Preview>
+
+## RGB
+
+<Preview>
+    <Story name="RGB">
+        <Skeleton color="rgb(25,67,89)"/>
+    </Story>
+</Preview>
+
+## RGBA
+
+<Preview>
+    <Story name="RGBA">
+        <Skeleton color="rgba(25,67,89,0.3)"/>
+    </Story>
+</Preview>

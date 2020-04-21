@@ -1,0 +1,38 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import Skeleton from '../Skeleton';
+
+<Meta title="Examples | Height"  />
+
+# `Height`
+
+*number | string - optional*
+
+Defaults to 100%. It is used to set the height of the skeleton. You can set it using `%`, `rem` or `px`.
+
+## Number 
+*equivalent to px*
+
+<Preview>
+    <Story name="Basic">
+        <Skeleton height={30}/>
+    </Story>
+</Preview>
+
+## Percentage
+
+<Preview>
+    <Story name="Percentage">
+        <div style={{height: '100px'}}>
+            <Skeleton height="50%"/>
+        </div>
+    </Story>
+</Preview>
+
+## Rem
+
+<Preview>
+    <Story name="Rem">
+        <Skeleton height="2rem"/>
+    </Story>
+</Preview>
