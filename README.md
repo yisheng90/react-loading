@@ -71,7 +71,7 @@ const CardSkleton = () => (
 
 ### Options
 
-**`row?: number`**
+**`rows?: number`**
 
 Defaults to 1. It is used to determine the number of rows to be display. 
 
