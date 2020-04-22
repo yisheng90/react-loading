@@ -3,8 +3,8 @@ interface SkeletonProps {
     circle?: boolean
     color?: string
     translucent?: boolean
-    height?: stting | number
-    width?: stting | number
+    height?: string | number
+    width?: string | number
 }
 
 export declare class Skeleton<SkeletonProps> {
