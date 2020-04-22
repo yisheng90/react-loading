@@ -27,11 +27,6 @@ jobs:
         uses: actions/create-release@latest
         env: 
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        with: 
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
 
       - name: Log when unchanged
         if: steps.check.outputs.changed != 'true'
