@@ -25,6 +25,11 @@ Loading Skleton component building block to easily create placholder loadings.
 
 
 
+### Docs
+
+[Storybook](https://yisheng90.github.io/react-loading/?path=/docs/react-loading-welcome--page)
+
+
 ### Getting Started
 
 Install via `yarn` or `npm`
