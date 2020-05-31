@@ -1,6 +1,6 @@
 {
   "name": "@yisheng90/react-loading",
-  "version": "1.2.3",
+  "version": "1.3.1",
   "description": "A React Skeleton Component",
   "main": "./lib/Skeleton.js",
   "scripts": {
@@ -19,11 +19,15 @@
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
+    "@auto-it/all-contributors": "^9.37.0",
+    "@auto-it/conventional-commits": "^9.37.0",
     "@storybook/addon-docs": "^5.3.18",
     "@storybook/react": "^5.3.13",
     "@storybook/storybook-deployer": "^2.8.5",
     "@testing-library/jest-dom": "^5.1.1",
     "@testing-library/react": "^9.4.0",
+    "all-contributors-cli": "^6.15.0",
+    "auto": "^9.37.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
@@ -55,5 +59,15 @@
   "bugs": {
     "url": "https://github.com/yisheng90/react-loading/issues"
   },
-  "homepage": "https://github.com/yisheng90/react-loading#readme"
+  "homepage": "https://github.com/yisheng90/react-loading#readme",
+  "dependencies": {
+    "g": "^2.0.1"
+  },
+  "auto": {
+    "plugins": [
+      "npm",
+      "all-contributors",
+      "conventional-commits"
+    ]
+  }
 }

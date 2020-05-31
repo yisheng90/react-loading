@@ -1,4 +1,4 @@
-on: 
+on:
   push:
     branches:
       - master
@@ -8,32 +8,78 @@ on:
       - master
 name: Release Package
 jobs:
-  release:
-    name: Release Package
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v1
         with:
-          ref: master
-      
-      - name: Check if version has been updated
-        id: check
-        uses: EndBug/version-check@v1
+          node-version: 12
 
-      - name: Create Release if version changed
-        if: steps.check.outputs.changed == 'true'
-        id: create_release
-        uses: actions/create-release@latest
-        env: 
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Run Test
+        run: yarn test
+
+  version:
+    name: Create versions
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Create new version
+        env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        with: 
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
+        run: |
+          yarn install
+          yarn run auto shipit
 
-      - name: Log when unchanged
-        if: steps.check.outputs.changed != 'true'
-        run: 'echo "No version change :/"'
-          
+  publish:
+    name: Publish Github Packages
+    runs-on: ubuntu-latest
+    needs: [test, version]
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: "master"
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+      - name: Build Package
+        run: |
+          yarn install
+          yarn build
+      - name: Publish Package
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
+
+  publish_npm:
+    name: Publish NPM
+    runs-on: ubuntu-latest
+    needs: [test, version]
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: "master"
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://registry.npmjs.org/
+      - name: Build Package
+        run: |
+          yarn install
+          yarn build
+      - name: Publish Package
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
