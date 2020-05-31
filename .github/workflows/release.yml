@@ -33,6 +33,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Prepare repository
+        run: git fetch --unshallow --tags
+
       - name: Create new version
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
