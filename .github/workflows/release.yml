@@ -1,4 +1,4 @@
-on: 
+on:
   push:
     branches:
       - master
@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: master
-      
+
       - name: Check if version has been updated
         id: check
         uses: EndBug/version-check@v1
@@ -25,15 +25,9 @@ jobs:
         if: steps.check.outputs.changed == 'true'
         id: create_release
         uses: actions/create-release@latest
-        env: 
+        env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        with: 
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
 
       - name: Log when unchanged
         if: steps.check.outputs.changed != 'true'
         run: 'echo "No version change :/"'
-          
