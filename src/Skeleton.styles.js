@@ -1,5 +1,5 @@
 import styled, { keyframes, css } from "styled-components";
-import { isValidStyleColor } from './helpers';
+import { isValidStyleColor, matchRgba, getRgba } from "./helpers";
 
 export const colors = {
   base: "#eee",
@@ -7,21 +7,38 @@ export const colors = {
   highlightTranslucent: "#f5f5f54D",
 };
 
-const getColorStyle = ({color, translucent}) => {
-  const baseColor = isValidStyleColor(color) ?  color : colors.base;
-  const hightlightColor = baseColor === colors.base ? colors.highlight : colors.highlightTranslucent;
+const getLinerGradient = (baseColor, highlightColor) => {
+  const isRgba = matchRgba(baseColor);
+
+  if (isRgba) {
+    const highlight = getRgba(baseColor, 0);
+
+    return css`
+      background-image: linear-gradient(90deg, ${highlight}, ${baseColor});
+    `;
+  }
 
   return css`
-    opacity: ${translucent ? "0.3" : "1"};
-    background-color: ${baseColor};
     background-image: linear-gradient(
       90deg,
-      rgba(255,0,0,0),
-      ${hightlightColor},
-      rgba(255,0,0,0)
+      ${baseColor},
+      ${highlightColor},
+      ${baseColor}
     );
   `;
-}
+};
+
+const getColorStyle = ({ color, translucent }) => {
+  const baseColor = isValidStyleColor(color) ? color : colors.base;
+  const highlightColor =
+    baseColor === colors.base ? colors.highlight : colors.highlightTranslucent;
+
+  return css`
+    opacity: ${translucent ? 0.3 : 1};
+    background-color: ${baseColor};
+    ${getLinerGradient(baseColor, highlightColor)}
+  `;
+};
 
 const getCircularStyle = ({ circle }) =>
   circle &&
@@ -66,7 +83,6 @@ export const skeletonKeyframe = keyframes`
     }
 `;
 
-
 export const Line = styled.span`
   &&& {
     display: block;
@@ -88,9 +104,9 @@ export const Container = styled.div`
   &&& {
     display: flex;
     align-items: center;
-    
-     > span {
-       margin-right: 10px;
-     }
+
+    > span {
+      margin-right: 10px;
+    }
   }
 `;

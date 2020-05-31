@@ -7,7 +7,7 @@ import { colors } from "../src/Skeleton.styles";
 
 const TEST_ID = "skeleton__item";
 
-const testForBaseStyle = element => {
+const testForBaseStyle = (element) => {
   expect(element).toHaveStyle(`
     display: block;
     margin: 0 0 4px 0;
@@ -15,9 +15,9 @@ const testForBaseStyle = element => {
     background-color: ${colors.base};
     background-image: linear-gradient(
       90deg,
-      rgba(255,0,0,0),
+      ${colors.base},
       ${colors.highlight},
-      rgba(255,0,0,0),
+      ${colors.base},
     );
     background-size: 220px 100%;
     background-repeat: no-repeat;
@@ -144,50 +144,49 @@ describe("Skeleton", () => {
   });
 
   describe("Color", () => {
+    const positiveTestCases = [
+      {
+        inputType: "color",
+        input: "red",
+        expectedOutput: "red",
+      },
+      {
+        inputType: "hex",
+        input: "#F8B195",
+        expectedOutput: "#F8B195",
+      },
+      {
+        inputType: "rgb",
+        input: "rgb(25,67,89)",
+        expectedOutput: "rgb(25,67,89)",
+      },
+      {
+        inputType: "rgba",
+        input: "rgba(25,67,89,0)",
+        expectedOutput: "rgba(25,67,89,0)",
+      },
+    ];
 
-    const positiiveTestCases = [
-      {
-        inputType: 'color',
-        input: 'red',
-        expectedOutput: 'red'
-      },
-      {
-        inputType: 'hex',
-        input: '#F8B195',
-        expectedOutput: '#F8B195'
-      },
-      {
-        inputType: 'rgb',
-        input: 'rgb(25,67,89)',
-        expectedOutput: 'rgb(25,67,89)'
-      },
-      {
-        inputType: 'rgba',
-        input: 'rgba(25,67,89,0)',
-        expectedOutput: 'rgba(25,67,89,0)'
-      },
-    ]
-
-    positiiveTestCases.forEach(({inputType, input, expectedOutput }) => {
+    positiveTestCases.forEach(({ inputType, input, expectedOutput }) => {
       it(`should render correct color if ${inputType} is provided in color prop`, () => {
         const { getByTestId } = render(<Skeleton color={input} />);
         const element = getByTestId(TEST_ID);
-  
+
         expect(element).toBeTruthy();
         expect(element).toHaveStyle(`
           background-color: ${expectedOutput};
           background-image: linear-gradient(
             90deg,
             rgba(255,0,0,0),
-            ${colors.highlightTrnaslucent},
+            ${colors.highlightTranslucent},
             rgba(255,0,0,0)
           );
         `);
       });
-    }) 
+    });
 
     it(`should render base style if invalid color is provided in color prop`, () => {
-      const { getByTestId } = render(<Skeleton color='vdsfgusgfu' />);
+      const { getByTestId } = render(<Skeleton color="vdsfgusgfu" />);
       const element = getByTestId(TEST_ID);
 
       expect(element).toBeTruthy();
