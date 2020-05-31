@@ -60,9 +60,6 @@
     "url": "https://github.com/yisheng90/react-loading/issues"
   },
   "homepage": "https://github.com/yisheng90/react-loading#readme",
-  "dependencies": {
-    "g": "^2.0.1"
-  },
   "auto": {
     "plugins": [
       "npm",
