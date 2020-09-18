@@ -1,6 +1,6 @@
 {
   "name": "@yisheng90/react-loading",
-  "version": "1.3.4",
+  "version": "1.4.0",
   "description": "A React Skeleton Component",
   "main": "./lib/Skeleton.js",
   "scripts": {
