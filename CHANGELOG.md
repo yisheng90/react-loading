@@ -1,3 +1,16 @@
+# (Fri Sep 18 2020)
+
+#### ⚠️ Pushed to `master`
+
+- v1.4.0 ([@yisheng90](https://github.com/yisheng90))
+- chore: 🤖 update github job ([@yisheng90](https://github.com/yisheng90))
+
+#### Authors: 1
+
+- Yi Sheng ([@yisheng90](https://github.com/yisheng90))
+
+---
+
 # v1.3.3 (Sun Aug 09 2020)
 
 #### 🐛 Bug Fix
