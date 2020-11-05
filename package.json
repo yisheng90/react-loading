@@ -1,10 +1,10 @@
 {
   "name": "@yisheng90/react-loading",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "A React Skeleton Component",
   "main": "./lib/Skeleton.js",
   "scripts": {
-    "build": "webpack && cp src/Skeleton.d.ts lib",
+    "build": "webpack",
     "storybook": "start-storybook",
     "test": "jest --config jestconfig.json --passWithNoTests",
     "commit": "npx git-cz",
@@ -43,7 +43,7 @@
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
-  "types": "Skeleton.d.ts",
+  "typings": "index.d.ts",
   "directories": {
     "lib": "lib"
   },
