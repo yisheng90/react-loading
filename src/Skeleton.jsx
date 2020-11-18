@@ -17,12 +17,12 @@ Skeleton.propTypes = {
   circle: PropTypes.bool,
   color: PropTypes.string,
   translucent: PropTypes.bool,
-  height: PropTypes.oneOfType[(PropTypes.string, PropTypes.number)],
-  width: PropTypes.oneOfType[(PropTypes.string, PropTypes.number)]
+  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Skeleton.defaultProps = {
-  rows: 1
+  rows: 1,
 };
 
 export default Skeleton;

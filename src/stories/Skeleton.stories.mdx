@@ -1,6 +1,6 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
-<Meta title="React Loading | Welcome"  />
+<Meta title="React Loading | Welcome" />
 
 # ![Skleton](https://res.cloudinary.com/duuqqcc3z/image/upload/v1587462403/react-loading/skull_1.svg) React Loading
 
@@ -15,14 +15,13 @@ Loading Skleton component building block to easily create placholder loadings.
 
 ## Features
 
-🎨 **Customizable** - You can change the color, size and shape of the skeleton 
+🎨 **Customizable** - You can change the color, size and shape of the skeleton
 
 🎮 **Plug and Play** - You can just import the component and start using it
 
 🏠 **Building block** - You can use it as a building block to build complex loading component
 
 🧸 **Easy to adapt** - It is a react component.
-
 
 ## Getting Started
 
@@ -45,34 +44,42 @@ There are two ways to use it.
 **1. Use it as a component**
 
 ```jsx
-import Skeleton from '@yisheng90/react-loading';
+import Skeleton from "@yisheng90/react-loading";
 
-<Skeleton/>
+<Skeleton />;
 ```
 
 **2. Use it as a building block**
 
 ```jsx
-import Skeleton from '@yisheng90/react-loading';
+import Skeleton from "@yisheng90/react-loading";
 
 const CardSkleton = () => (
-    <div style={{display: 'flex', padding: '20px'}}>
-      <Skeleton  width={45} circle color="pink"/>
-      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', width: '100%', marginLeft: "20px"}}>
-        <Skeleton color="pink"/>
-        <Skeleton width="50%" color="pink"/>
-      </div>
+  <div style={{ display: "flex", padding: "20px" }}>
+    <Skeleton width={45} circle color="pink" />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+        width: "100%",
+        marginLeft: "20px",
+      }}
+    >
+      <Skeleton color="pink" />
+      <Skeleton width="50%" color="pink" />
     </div>
-) 
+  </div>
+);
 ```
 
 ## Options
 
 **`rows?: number`**
 
-Defaults to 1. It is used to determine the number of rows to be displayed. 
+Defaults to 1. It is used to determine the number of rows to be displayed.
 
-*notes: This option will be ignored if `circle` is set as true*
+_notes: This option will be ignored if `circle` is set as true_
 
 **`width?: number | string`**
 
@@ -84,7 +91,7 @@ Defaults to 100%. It is used to set the height of the skeleton. You can set it u
 
 **`circle?: boolean`**
 
-Defaults to false. It is used to set shape of the skleton. 
+Defaults to false. It is used to set shape of the skleton.
 
 **`color?: string`**
 
@@ -92,8 +99,7 @@ It is used to set the color of the skleton. You can set it using `hex`, `rgb` or
 
 **`translucent?: boolean`**
 
-Defaults to false. It is used to set the opacity of the skleton. 
-
+Defaults to false. It is used to set the opacity of the skleton.
 
 ## Contributing
 
@@ -105,8 +111,6 @@ Please make sure to update tests as appropriate.
 
 [![Yi Sheng Lee](https://avatars3.githubusercontent.com/u/15208791?s=50&v=4)](https://github.com/yisheng90)
 
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-

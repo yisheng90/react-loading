@@ -1,36 +1,37 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
 
-import Skeleton from '../Skeleton';
+import Skeleton from "../Skeleton";
 
-<Meta title="Examples | Width"  />
+<Meta title="Examples | Width" />
 
 # `Width`
 
-*number | string - optional*
+_number | string - optional_
 
 Defaults to 100%. It is used to set the width of the skeleton. You can set it using `%`, `rem` or `px`.
 
-## Number 
-*equivalent to px*
+## Number
+
+_equivalent to px_
 
 <Preview>
-    <Story name="Basic">
-        <Skeleton width={300}/>
-    </Story>
+  <Story name="Basic">
+    <Skeleton width={300} />
+  </Story>
 </Preview>
 
 ## Percentage
 
 <Preview>
-    <Story name="Percentage">
-        <Skeleton width="50%"/>
-    </Story>
+  <Story name="Percentage">
+    <Skeleton width="50%" />
+  </Story>
 </Preview>
 
 ## Rem
 
 <Preview>
-    <Story name="Rem">
-        <Skeleton width="6rem"/>
-    </Story>
+  <Story name="Rem">
+    <Skeleton width="6rem" />
+  </Story>
 </Preview>
