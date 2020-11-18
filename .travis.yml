@@ -3,6 +3,8 @@ install:
   - npm install -g codecov
 node_js:
   - "stable"
+before_script:
+  - npm install
 cache:
   directories:
     - node_modules
