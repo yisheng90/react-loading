@@ -4,7 +4,7 @@ install:
 node_js:
   - "stable"
 before_script:
-  - npm install
+  - npm install --force
 cache:
   directories:
     - node_modules
