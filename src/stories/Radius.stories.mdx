@@ -1,0 +1,21 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs/blocks";
+
+import Skeleton from "../Skeleton";
+
+<Meta title="Examples | Radius" />
+
+# `Radius`
+
+_number - optional_
+
+It is used to set the border radius of the skleton. The unit is in `px`.
+
+\*\* This props will be omitted when `circle` is set to true
+
+## Radius
+
+<Preview>
+  <Story name="Radius">
+    <Skeleton radius={50} />
+  </Story>
+</Preview>

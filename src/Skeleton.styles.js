@@ -28,6 +28,14 @@ const getLinerGradient = (baseColor, highlightColor) => {
   `;
 };
 
+const getRadiusStyle = ({ radius, circle }) => {
+  if (circle) return ``;
+
+  return css`
+    border-radius: ${radius ? `${radius}px` : "4px"};
+  `;
+};
+
 const getColorStyle = ({ color, translucent }) => {
   const baseColor = isValidStyleColor(color) ? color : colors.base;
   const highlightColor =
@@ -89,10 +97,10 @@ export const Line = styled.span`
     margin: 0 0 4px 0;
     background-size: 220px 100%;
     background-repeat: no-repeat;
-    border-radius: 4px;
     line-height: 1.5;
     min-height: 16px;
     animation: ${skeletonKeyframe} 1.5s ease-in-out infinite;
+    ${getRadiusStyle}
     ${getCircularStyle}
     ${getSkeletonHeight}
     ${getSkeletonWidth}

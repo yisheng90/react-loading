@@ -19,6 +19,7 @@ Skeleton.propTypes = {
   translucent: PropTypes.bool,
   height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  radius: PropTypes.number,
 };
 
 Skeleton.defaultProps = {

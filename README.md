@@ -1,5 +1,3 @@
-
-
 # ![Skleton](https://res.cloudinary.com/duuqqcc3z/image/upload/v1587462403/react-loading/skull_1.svg) React Loading
 
 [![Build Status](https://travis-ci.org/yisheng90/react-loading.png?branch=master)](https://travis-ci.org/yisheng90/react-loading)
@@ -11,11 +9,9 @@ Loading Skleton component building block to easily create placholder loadings.
 
 ![Example](https://res.cloudinary.com/duuqqcc3z/image/upload/v1587462782/react-loading/Screen-Recording-2020-04-21-at-5.gif)
 
-
-
 ### Features
 
-🎨 **Customizable** - You can change the color, size and shape of the skeleton 
+🎨 **Customizable** - You can change the color, size and shape of the skeleton
 
 🎮 **Plug and Play** - You can just import the component and start using it
 
@@ -23,12 +19,9 @@ Loading Skleton component building block to easily create placholder loadings.
 
 🧸 **Easy to adapt** - It is a react component.
 
-
-
 ### Docs
 
 [Storybook](https://yisheng90.github.io/react-loading/?path=/docs/react-loading-welcome--page)
-
 
 ### Getting Started
 
@@ -44,43 +37,49 @@ or
 yarn add  @yisheng90/react-loading
 ```
 
-
-
-### Usage 
+### Usage
 
 There are two ways to use it.
 
 **1. Use it as a component**
 
 ```jsx
-import Skeleton from '@yisheng90/react-loading';
+import Skeleton from "@yisheng90/react-loading";
 
-<Skeleton/>
+<Skeleton />;
 ```
 
 **2. Use it as a building block**
 
 ```jsx
-import Skeleton from '@yisheng90/react-loading';
+import Skeleton from "@yisheng90/react-loading";
 
 const CardSkleton = () => (
-    <div style={{display: 'flex', padding: '20px'}}>
-      <Skeleton  width={45} circle color="pink"/>
-      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly', width: '100%', marginLeft: "20px"}}>
-        <Skeleton color="pink"/>
-        <Skeleton width="50%" color="pink"/>
-      </div>
+  <div style={{ display: "flex", padding: "20px" }}>
+    <Skeleton width={45} circle color="pink" />
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-evenly",
+        width: "100%",
+        marginLeft: "20px",
+      }}
+    >
+      <Skeleton color="pink" />
+      <Skeleton width="50%" color="pink" />
     </div>
-) 
+  </div>
+);
 ```
 
-### Options
+### Props
 
 **`rows?: number`**
 
-Defaults to 1. It is used to determine the number of rows to be display. 
+Defaults to 1. It is used to determine the number of rows to be display.
 
-*notes: This option will be ignored if `circle` is set as true*
+_notes: This option will be ignored if `circle` is set as true_
 
 **`width?: number | string`**
 
@@ -92,17 +91,21 @@ Defaults to 100%. It is used to set the height of the skeleton. You can set it u
 
 **`circle?: boolean`**
 
-Defaults to false. It is used to set shape of the skleton. 
+Defaults to false. It is used to set shape of the skleton.
 
 **`color?: string`**
 
 It is used to set the color of the skleton. You can set it using `hex`, `rgb` or `rgba`.
 
-
 **`translucent?: boolean`**
 
-Defaults to false. It is used to set the opacity of the skleton. 
+Defaults to false. It is used to set the opacity of the skleton.
 
+**`radius?: number`**
+
+Defaults to 4px. It is used to determine the border radius of the rows. The unit is in `px`.
+
+_notes: This option will be ignored if `circle` is set as true_
 
 ### Examples
 
@@ -110,9 +113,8 @@ Defaults to false. It is used to set the opacity of the skleton.
 
 <img src="https://i.imgur.com/bA5LKdJ.gif" width="500">
 
-
 ```jsx
-    <Skeleton width={250} rows={6} />
+<Skeleton width={250} rows={6} />
 ```
 
 #### Width
@@ -125,7 +127,6 @@ Defaults to false. It is used to set the opacity of the skleton.
     <Skeleton width="5rem"/>
 ```
 
-
 #### Height
 
 <img src="https://i.imgur.com/k7LDwjD.gif"  width="500">
@@ -135,7 +136,6 @@ Defaults to false. It is used to set the opacity of the skleton.
     <Skeleton height="25px" />
     <Skeleton height="3rem" />
 ```
-
 
 ### Circle
 
@@ -149,11 +149,9 @@ Defaults to false. It is used to set the opacity of the skleton.
     <Skeleton circle width={115} />
 ```
 
-
 ### Color
 
 <img src="https://media1.tenor.com/images/864728696b8974c3b7ddb69985982dee/tenor.gif?itemid=16905339">
-
 
 ```jsx
     <Skeleton color="pink" circle width={35}/>
@@ -168,7 +166,7 @@ Defaults to false. It is used to set the opacity of the skleton.
 <img src="https://media.tenor.com/images/b4889c52dff909fcc84a6038b466f8ae/tenor.gif">
 
 ```jsx
-   <Skeleton color="black" width={250} height={30} translucent/>
+<Skeleton color="black" width={250} height={30} translucent />
 ```
 
 ## Contributing
@@ -180,8 +178,6 @@ Please make sure to update tests as appropriate.
 ### Contributors
 
 [![Yi Sheng Lee](https://avatars3.githubusercontent.com/u/15208791?s=50&v=4)](https://github.com/yisheng90)
-
-
 
 ## License
 

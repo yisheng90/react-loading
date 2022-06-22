@@ -73,7 +73,7 @@ const CardSkleton = () => (
 );
 ```
 
-## Options
+## Props
 
 **`rows?: number`**
 
@@ -100,6 +100,12 @@ It is used to set the color of the skleton. You can set it using `hex`, `rgb` or
 **`translucent?: boolean`**
 
 Defaults to false. It is used to set the opacity of the skleton.
+
+**`radius?: number`**
+
+Defaults to 4px. It is used to determine the border radius of the rows. The unit is in `px`.
+
+_notes: This option will be ignored if `circle` is set as true_
 
 ## Contributing
 
