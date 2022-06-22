@@ -1,5 +1,11 @@
 # ![Skleton](https://res.cloudinary.com/duuqqcc3z/image/upload/v1587462403/react-loading/skull_1.svg) React Loading
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 [![Build Status](https://travis-ci.org/yisheng90/react-loading.png?branch=master)](https://travis-ci.org/yisheng90/react-loading)
 [![codecov](https://codecov.io/gh/yisheng90/react-loading/branch/master/graph/badge.svg)](https://codecov.io/gh/yisheng90/react-loading)
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
@@ -175,10 +181,20 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
-### Contributors
-
-[![Yi Sheng Lee](https://avatars3.githubusercontent.com/u/15208791?s=50&v=4)](https://github.com/yisheng90)
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
