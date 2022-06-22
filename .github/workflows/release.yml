@@ -24,40 +24,40 @@ jobs:
 
       - name: Run Test
         run: yarn test
-  # version:
-  #   name: Create versions
-  #   runs-on: ubuntu-latest
-  #   needs: [test]
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v2
-  #     - name: Prepare repository
-  #       run: git fetch --unshallow --tags
-  #     - name: Create new version
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-  #         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  #       run: |
-  #         yarn install
-  #         yarn run auto shipit
-  # publish:
-  #   name: Publish Github Packages
-  #   runs-on: ubuntu-latest
-  #   needs: [test, version]
-  #   if: github.ref == 'refs/heads/master'
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #       with:
-  #         ref: "master"
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: 12
-  #         registry-url: https://npm.pkg.github.com/
-  #     - name: Build Package
-  #       run: |
-  #         yarn install
-  #         yarn build
-  #     - name: Publish Package
-  #       run: yarn publish
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
+  version:
+    name: Create versions
+    runs-on: ubuntu-latest
+    needs: [test]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Prepare repository
+        run: git fetch --unshallow --tags
+      - name: Create new version
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          yarn install
+          yarn run auto shipit
+  publish:
+    name: Publish Github Packages
+    runs-on: ubuntu-latest
+    needs: [test, version]
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: "master"
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+      - name: Build Package
+        run: |
+          yarn install
+          yarn build
+      - name: Publish Package
+        run: yarn publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
