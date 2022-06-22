@@ -35,11 +35,12 @@ jobs:
         run: git fetch --unshallow --tags
       - name: Create new version
         env:
+          NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           yarn install
-          yarn run auto shipit
+          yarn run auto version
   publish:
     name: Publish Github Packages
     runs-on: ubuntu-latest
